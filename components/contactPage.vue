@@ -1,3 +1,4 @@
+@/public/
 <template>
   <baseComponent
     id="4"
@@ -6,9 +7,9 @@
     @height-change="heightChange"
     @scroll="scroll"
   >
-    <template #title> KONTAKT </template>
+    <template #title> kontakt </template>
     <template #text>
-      <div class="h-full center-items flex flex-col font-thin">
+      <div class="h-full center-items flex text-black flex-col font-thin">
         <p class="text-xs sm:text-base lg:text-xl 3xl:text-2xl">sag hallo:</p>
         <a
           href="mailto:dimitri@franov.ch"
@@ -18,26 +19,26 @@
         <div class="flex flex-row pt-2 lg:pt-4">
           <a href="https://www.instagram.com/dimitri.franov/">
             <img
-              src="instagram.svg"
+              src="@/public/instagram.svg"
               alt="instagram"
               class="h-5 sm:h-7 lg:h-10 px-1 lg:px-2"
             />
           </a>
           <a href="https://twitter.com/dimitrifranov">
             <img
-              src="twitter.svg"
+              src="@/public/twitter.svg"
               alt="twitter"
               class="h-5 sm:h-7 lg:h-10 px-1 lg:px-2"
           /></a>
           <a href="https://github.com/dimitrifranov">
             <img
-              src="github.svg"
+              src="@/public/github.svg"
               alt="github"
               class="h-5 sm:h-7 lg:h-10 px-1 lg:px-2"
           /></a>
           <a href="https://ch.linkedin.com/in/dimitri-franov-73180b184"
             ><img
-              src="linkedin.svg"
+              src="@/public/linkedin.svg"
               alt="linkedin"
               class="h-5 sm:h-7 lg:h-10 px-1 lg:px-2"
           /></a>

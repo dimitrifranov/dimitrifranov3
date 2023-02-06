@@ -6,7 +6,7 @@
     @height-change="heightChange"
     @scroll="scroll"
   >
-    <template #title> FOTOGRAFIE </template>
+    <template #title> fotografie </template>
     <template #next_page>
       <slot name="next_page" />
     </template>

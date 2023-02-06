@@ -7,7 +7,7 @@
     </section>
     <section class="equation center-items">
       <img
-        src="equation.png"
+        src="@/public/equation.svg"
         alt="equation"
         class="h-24 sm:h-36 2xl:h-40 3xl:h-56"
       />>

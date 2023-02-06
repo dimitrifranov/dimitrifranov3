@@ -6,7 +6,7 @@
     @height-change="heightChange"
     @scroll="scroll"
   >
-    <template #title> PROJEKTE </template>
+    <template #title> projekte </template>
     <template #next_page>
       <slot name="next_page" />
     </template>

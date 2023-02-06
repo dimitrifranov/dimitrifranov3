@@ -2,15 +2,15 @@
   <div>
     <div class="flex justify-center background">
       <div class="containing page">
-        <div id="home" class="contain">
+        <div id="home" class="contain" :style="windowStyle">
           <header class="title center-items">
             <img
-              src="logo.svg"
+              src="@/public/logo.svg"
               alt="logo"
-              class="h-32 sm:h-36 2xl:h-40 3xl:h-56"
+              class="h-32 sm:h-56 2xl:h-64 3xl:h-56"
             />
             <h1
-              class="leading-none name text-2xl sm:text-4xl 2xl:text-5xl 3xl:text-7xl pt-10 -ml-8"
+              class="leading-none name text-2xl sm:text-4xl 2xl:text-5xl 3xl:text-7xl pt-10 -ml-8 sm:pt-16 sm:-ml-14"
             >
               <p class="font-semibold font-main">dimitri</p>
               <p class="font-light font-display">franov</p>
@@ -18,9 +18,9 @@
           </header>
           <section class="equation center-items">
             <img
-              src="equation.svg"
+              src="@/public/equation.svg"
               alt="equation"
-              class="h-24 sm:h-36 2xl:h-40 3xl:h-56"
+              class="h-24 sm:h-44 2xl:h-48 3xl:h-56"
             />
           </section>
           <section class="new_page">
@@ -55,11 +55,15 @@
             </blogPage>
           </section>
           <section class="text">
-            <article>
-              <h3 class="text-3xl -rotate-90 -translate-x-20 -translate-y-6">
+            <article class="pt-9 sm:pt-16 flex">
+              <h3
+                class="text-3xl sm:text-5xl 2xl:text-6xl w-fit h-fit -rotate-90 origin-top-right -ml-14 sm:-ml-20"
+              >
                 hallo
               </h3>
-              <p class="text-xs ml-14 mr-10">
+              <p
+                class="text-xs sm:text-base 2xl:text-xl mr-10 2xl:mr-24 ml-9 sm:ml-12 2xl:ml-14"
+              >
                 Und dies ist meine Homepage. Um zum nächsten Abschnitt zu
                 gelangen kannst du gerne scrollen oder auf das
                 Inhaltsverzeichnis rechts drücken. Und dies ist meine Homepage.
@@ -128,8 +132,6 @@ export default {
   },
   data() {
     return {
-      width: 0,
-      height: 0,
       windowWidth: 0,
       windowHeight: 0,
     };
@@ -153,7 +155,7 @@ export default {
       return this.windowWidth / 1.61803;
     },
     phiMobileHeight() {
-      return this.windowWidth * 1.61803;
+      return Math.round(this.windowWidth * 1.61803);
     },
     windowStyle() {
       if (this.windowWidth <= 1024) {
@@ -178,27 +180,25 @@ export default {
   },
   mounted() {
     // console.log(this.$route.hash[1]);
+
     this.windowWidth = window.innerWidth;
     this.windowHeight = window.innerHeight;
+
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
       this.windowHeight = window.innerHeight;
     };
-    if (this.windowWidth < this.windowHeight) this.articles.length = 4;
-    setTimeout(() => {
-      this.width = document.getElementById("home").clientWidth;
-      this.height = document.getElementById("home").clientHeight;
-      window.addEventListener("resize", () => {
-        setTimeout(() => {
-          this.width = document.getElementById("home").clientWidth;
-          this.height = document.getElementById("home").clientHeight;
-        }, 1);
-      });
-    }, 1);
-    // const canvas = document.getElementById('background')
-    // const ctx = canvas.getContext('2d')
-    // ctx.fillStyle = 'blue'
-    // ctx.fillRect(0, 0, canvas.width, canvas.height)
+    // if (this.windowWidth < this.windowHeight) this.articles.length = 4;
+    // setTimeout(() => {
+    //   this.width = document.getElementById("home").clientWidth;
+    //   this.height = document.getElementById("home").clientHeight;
+    //   window.addEventListener("resize", () => {
+    //     setTimeout(() => {
+    //       this.width = document.getElementById("home").clientWidth;
+    //       this.height = document.getElementById("home").clientHeight;
+    //     }, 1);
+    //   });
+    // }, 1);
 
     gsap.defaults({ duration: 1, ease: "none" });
     gsap.registerPlugin(scrollTrigger, scrollToPlugin);
@@ -276,6 +276,11 @@ export default {
   width: 100vw;
   transform-origin: top right;
 }
+
+.container {
+  height: v-bind(phiMobileHeight);
+}
+
 @media only screen and (min-width: 1024px) {
   .contain {
     display: grid;
@@ -289,7 +294,6 @@ export default {
 
 @media only screen and (max-width: 1024px) {
   .contain {
-    height: v-bind(phiMobileHeight);
     display: grid;
     grid-template-columns: 1.61803fr 1fr;
     grid-template-rows: 1.61803fr 1fr 1.61803fr;

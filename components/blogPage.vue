@@ -1,6 +1,6 @@
 <template>
   <baseComponent id="1" pk="blog" :windowstyle="windowstyle" @scroll="scroll">
-    <template #title> BLOG </template>
+    <template #title> blog </template>
     <template #next_page>
       <slot
         name="next_page"
