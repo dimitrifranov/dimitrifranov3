@@ -7,10 +7,10 @@
             <img
               src="@/public/logo.svg"
               alt="logo"
-              class="h-32 sm:h-56 2xl:h-64 3xl:h-56"
+              class="h-40 sm:h-56 2xl:h-80 3xl:h-96"
             />
             <h1
-              class="leading-none name text-2xl sm:text-4xl 2xl:text-5xl 3xl:text-7xl pt-10 -ml-8 sm:pt-16 sm:-ml-14"
+              class="leading-none tracking-tighter name text-3xl sm:text-4xl 2xl:text-5xl 3xl:text-7xl pt-10 -ml-8 sm:pt-16 sm:-ml-14"
             >
               <p class="font-semibold font-main">dimitri</p>
               <p class="font-light font-display">franov</p>
@@ -20,7 +20,7 @@
             <img
               src="@/public/equation.svg"
               alt="equation"
-              class="h-24 sm:h-44 2xl:h-48 3xl:h-56"
+              class="h-28 sm:h-44 2xl:h-60 3xl:h-56"
             />
           </section>
           <section class="new_page">
@@ -57,24 +57,25 @@
           <section class="text">
             <article class="pt-9 sm:pt-16 flex">
               <h3
-                class="text-3xl sm:text-5xl 2xl:text-6xl w-fit h-fit -rotate-90 origin-top-right -ml-14 sm:-ml-20"
+                class="tracking-tighter font-light text-3xl sm:text-5xl 2xl:text-6xl w-fit h-fit -rotate-90 origin-top-right -ml-14 sm:-ml-20 2xl:-ml-10"
               >
                 hallo
               </h3>
-              <p
-                class="text-xs sm:text-base 2xl:text-xl mr-10 2xl:mr-24 ml-9 sm:ml-12 2xl:ml-14"
-              >
-                Und dies ist meine Homepage. Um zum nächsten Abschnitt zu
-                gelangen kannst du gerne scrollen oder auf das
-                Inhaltsverzeichnis rechts drücken. Und dies ist meine Homepage.
-                Um zum nächsten Abschnitt zu gelangen kannst du gerne scrollen
-                oder auf das Inhaltsverzeichnis rechts drücken.
-              </p>
+              <div class="mr-10 2xl:mr-60 ml-9 sm:ml-12 2xl:ml-24 2xl:pt-20">
+                <p class="text-xs sm:text-base 2xl:text-xl">
+                  Und dies ist meine Homepage. Um zum nächsten Abschnitt zu
+                  gelangen kannst du gerne scrollen oder auf das
+                  Inhaltsverzeichnis rechts drücken. Und dies ist meine
+                  Homepage. Um zum nächsten Abschnitt zu gelangen kannst du
+                  gerne scrollen oder auf das Inhaltsverzeichnis rechts drücken.
+                </p>
+                <baseButton class="h-8 w-24 mt-10">mehr über mich</baseButton>
+              </div>
             </article>
           </section>
           <div class="content center-items">
             <ul
-              class="text-black text-xs sm:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl border-l-2 border-black pl-1 py-4"
+              class="text-black text-sm sm:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl border-l-2 border-black pl-1 py-4"
             >
               <li
                 class="cursor-pointer hover:text-white md:pb-1 3xl:pb-2"
