@@ -9,7 +9,7 @@
       <img
         src="@/public/equation.svg"
         alt="equation"
-        class="h-24 sm:h-36 2xl:h-40 3xl:h-56"
+        class="h-28 sm:h-44 2xl:h-60 3xl:h-56"
       />>
     </section>
     <section class="next_page">
@@ -18,44 +18,43 @@
     <section class="text">
       <slot name="text" />
     </section>
-    <section class="content">
+    <section class="content center-items">
       <!-- <slot name="content" /> -->
-      <div class="center-items flex flex-col">
-        <ul
-          class="text-black text-lg sm:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl"
+
+      <ul
+        class="text-black text-sm sm:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl border-l-2 border-black pl-1 py-4"
+      >
+        <li
+          class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
+          @click="scrollTo(0)"
         >
-          <li
-            class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
-            @click="scrollTo(0)"
-          >
-            Home
-          </li>
-          <li
-            class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
-            @click="scrollTo(1)"
-          >
-            Blog
-          </li>
-          <li
-            class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
-            @click="scrollTo(2)"
-          >
-            Projekte
-          </li>
-          <li
-            class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
-            @click="scrollTo(3)"
-          >
-            Fotografie
-          </li>
-          <li
-            class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
-            @click="scrollTo(4)"
-          >
-            Kontakt
-          </li>
-        </ul>
-      </div>
+          home
+        </li>
+        <li
+          class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
+          @click="scrollTo(1)"
+        >
+          blog
+        </li>
+        <li
+          class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
+          @click="scrollTo(2)"
+        >
+          projekte
+        </li>
+        <li
+          class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
+          @click="scrollTo(3)"
+        >
+          fotografie
+        </li>
+        <li
+          class="hover:text-white cursor-pointer md:pb-1 3xl:pb-2"
+          @click="scrollTo(4)"
+        >
+          kontakt
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -151,15 +150,15 @@ export default {
 } */
 .title {
   /* outline: 2px solid black; */
-  border: 2px solid black;
+  border: 1px solid black;
   color: #000000;
   background-color: #ffffff;
   grid-area: title;
 }
 
 .content {
-  outline: 2px solid black;
-  border: 2px solid black;
+  outline: 1px solid black;
+  border: 1px solid black;
   /* font-size: 1px; */
   color: black;
   background-color: #f7f7f7;
@@ -168,7 +167,7 @@ export default {
 
 .equation {
   /* outline: 2px solid black; */
-  border: 2px solid black;
+  border: 1px solid black;
   color: black;
   background-color: #fafafa;
   grid-area: equation;
@@ -176,7 +175,7 @@ export default {
 
 .text {
   /* outline: 2px solid black; */
-  border: 2px solid black;
+  border: 1px solid black;
   color: beige;
   background-color: #fcfcfc;
   grid-area: text;

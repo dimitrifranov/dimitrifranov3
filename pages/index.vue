@@ -122,13 +122,16 @@ import scrollTrigger from "gsap/ScrollTrigger";
 import scrollToPlugin from "gsap/ScrollToPlugin";
 
 export default {
-  async Data({ $content }) {
-    const articles = await $content("blog").limit(6).fetch();
-    const photos = await $content("photos").limit(6).fetch();
+  async Data() {
+    const { articles } = await useAsyncData("blog", () =>
+      queryContent("/blog").only(["title"]).find()
+    );
+    console.log(articles);
+    // const articles = await $content("blog").limit(6).fetch();
+    // const photos = await $content("photos").limit(6).fetch();
 
     return {
       articles,
-      photos,
     };
   },
   data() {

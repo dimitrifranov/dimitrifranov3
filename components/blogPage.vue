@@ -1,6 +1,9 @@
 <template>
   <baseComponent id="1" pk="blog" :windowstyle="windowstyle" @scroll="scroll">
-    <template #title> blog </template>
+    <template #title>
+      <img src="@/public/blog.svg" class="h-7" />
+      <h2 class="text-4xl ml-4">blog</h2>
+    </template>
     <template #next_page>
       <slot
         name="next_page"
@@ -14,11 +17,13 @@
         <div
           class="grid lg:grid-cols-3 grid-cols-1 lg:grid-rows-2 w-full articles lg:p-4 lg:pb-2 pb-3"
         >
-          <articlePreview
+          <div
             v-for="article in articles"
             :key="article.slug"
-            :article="article"
-          />
+            class="text-sm text-black"
+          >
+            {{ article }}
+          </div>
         </div>
         <nuxt-link
           to="/blog"
